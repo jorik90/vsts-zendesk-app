@@ -390,7 +390,7 @@
       var summary = $modal.find(".summary").val();
       if (!summary) { return this.showErrorInModal($modal, this.I18n.t("modals.new.errSummaryRequired")); }
 
-      var description = $modal.find(".description").val();
+      var description = $modal.find(".description").val().replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br />$2'); // line-endings omzetten naar br voor VSO
       var attachments = this.getSelectedAttachments($modal);
 
       var operations = [].concat(
