@@ -204,7 +204,11 @@
           workItemTypes: []
         };
       }), function (project) {
-        return project.name.toLowerCase();
+        var result = project.name.toLowerCase();
+        if(result === "embrace") {
+            result = "1embrace";
+        }
+        return result;
       });
     },
 
